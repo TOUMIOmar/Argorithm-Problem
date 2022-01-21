@@ -1,0 +1,30 @@
+ALGORITHM CheckpointArgorithm
+VAR 
+Read(sun);
+len : INTEGER;
+nw : INTEGER:=1;
+nv : INTEGER:=0;
+
+
+BEGIN
+//The length of the sentence (the number of characters)
+len := sun.length;
+//The number of words in the sentence (assuming that the words are separated by a single space).
+FOR i FROM 0 TO len-1 STEP step  DO
+    IF (sun[i]==" ") THEN
+        nw:= nw + 1;
+    END_IF
+END_FOR
+
+//The number of vowels in the sentence
+FOR i FROM 0 TO len-1 STEP step  DO
+    IF (sun[i]="a"||sun[i]="e"||sun[i]="i"||sun[i]="o"||sun[i]="u") THEN
+        nv := nv + 1;
+    END_IF
+END_FOR
+
+Write (len)
+Write(nw)
+Write(nv)
+
+END
